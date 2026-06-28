@@ -18,7 +18,7 @@ function AdminDashboard() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/api/auth/users", {
+    fetch("https://kgn-handloom.onrender.com/api/auth/users", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -35,7 +35,7 @@ function AdminDashboard() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:5000/api/auth/disable-staff/${id}`,
+      `https://kgn-handloom.onrender.com/api/auth/disable-staff/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -60,7 +60,7 @@ function AdminDashboard() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:5000/api/auth/enable-staff/${id}`,
+      `https://kgn-handloom.onrender.com/api/auth/enable-staff/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -95,7 +95,7 @@ function AdminDashboard() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:5000/api/auth/delete-user/${id}`,
+      `https://kgn-handloom.onrender.com/api/auth/delete-user/${id}`,
       {
         method: "DELETE",
         headers: {

@@ -10,7 +10,7 @@ function AddOffers() {
 
     // ✅ FETCH OFFERS (FIXED)
     async function fetchOffers() {
-        const res = await fetch("http://localhost:5000/api/offers/admin/all");
+        const res = await fetch("https://kgn-handloom.onrender.com/api/offers/admin/all");
         const data = await res.json();
         setOffers(data);
     }
@@ -33,7 +33,7 @@ function AddOffers() {
         formData.append("description", description);
         formData.append("image", image);
 
-        const res = await fetch("http://localhost:5000/api/offers/add", {
+        const res = await fetch("https://kgn-handloom.onrender.com/api/offers/add", {
             method: "POST",
             body: formData,
         });
@@ -55,7 +55,7 @@ function AddOffers() {
 
         if (!confirmDelete) return;
 
-        await fetch(`http://localhost:5000/api/offers/delete/${id}`, {
+        await fetch(`https://kgn-handloom.onrender.com/api/offers/delete/${id}`, {
             method: "DELETE",
         });
 
@@ -65,8 +65,8 @@ function AddOffers() {
     // ✅ TOGGLE (FIXED)
     async function toggleActive(id, currentStatus) {
         const url = currentStatus
-            ? `http://localhost:5000/api/offers/hide/${id}`
-            : `http://localhost:5000/api/offers/show/${id}`;
+            ? `https://kgn-handloom.onrender.com/api/offers/hide/${id}`
+            : `https://kgn-handloom.onrender.com/api/offers/show/${id}`;
 
         await fetch(url, { method: "PUT" });
 

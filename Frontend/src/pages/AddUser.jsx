@@ -27,7 +27,7 @@ function AddUser() {
 
         const token = localStorage.getItem("token");
 
-        fetch(`http://localhost:5000/api/auth/user/${id}`, {
+        fetch(`https://kgn-handloom.onrender.com/api/auth/user/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -79,7 +79,7 @@ function AddUser() {
                 photoData.append("image", photo);
 
                 const photoRes = await fetch(
-                    "http://localhost:5000/api/products/upload-image",
+                    "https://kgn-handloom.onrender.com/api/products/upload-image",
                     {
                         method: "POST",
                         body: photoData,
@@ -96,7 +96,7 @@ function AddUser() {
                 frontData.append("image", aadhaarFront);
 
                 const frontRes = await fetch(
-                    "http://localhost:5000/api/products/upload-image",
+                    "https://kgn-handloom.onrender.com/api/products/upload-image",
                     {
                         method: "POST",
                         body: frontData,
@@ -113,7 +113,7 @@ function AddUser() {
                 backData.append("image", aadhaarBack);
 
                 const backRes = await fetch(
-                    "http://localhost:5000/api/products/upload-image",
+                    "https://kgn-handloom.onrender.com/api/products/upload-image",
                     {
                         method: "POST",
                         body: backData,
@@ -138,7 +138,7 @@ function AddUser() {
 
             if (isEdit) {
                 response = await fetch(
-                    `http://localhost:5000/api/auth/update-user/${id}`,
+                    `https://kgn-handloom.onrender.com/api/auth/update-user/${id}`,
                     {
                         method: "PUT",
                         headers: {
@@ -150,7 +150,7 @@ function AddUser() {
                 );
             } else {
                 response = await fetch(
-                    "http://localhost:5000/api/auth/create-user",
+                    "https://kgn-handloom.onrender.com/api/auth/create-user",
                     {
                         method: "POST",
                         headers: {

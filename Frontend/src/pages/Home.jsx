@@ -27,13 +27,13 @@ function Home() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/catalog/root")
+    fetch("https://kgn-handloom.onrender.com/api/catalog/root")
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/products/all")
+    fetch("https://kgn-handloom.onrender.com/api/products/all")
       .then(res => res.json())
       .then(data => {
         setProducts(data);
@@ -48,7 +48,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/banners")
+    fetch("https://kgn-handloom.onrender.com/api/banners")
       .then(res => res.json())
       .then(data => {
         const activeBanners = data.filter(b => b.isActive);

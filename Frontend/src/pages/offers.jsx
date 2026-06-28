@@ -6,7 +6,7 @@ function Offers() {
 
   useEffect(() => {
     async function fetchOffers() {
-      const res = await fetch("http://localhost:5000/api/offers");
+      const res = await fetch("https://kgn-handloom.onrender.com/api/offers");
       const data = await res.json();
       setOffers(data);
     }

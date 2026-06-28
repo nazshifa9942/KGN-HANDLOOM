@@ -8,7 +8,7 @@ function HeroBannerManager() {
 
     // fetch banners
     useEffect(() => {
-        fetch("http://localhost:5000/api/banners")
+        fetch("https://kgn-handloom.onrender.com/api/banners")
             .then(res => res.json())
             .then(data => setBanners(data));
     }, []);
@@ -24,7 +24,7 @@ function HeroBannerManager() {
         imageData.append("image", imageFile);
 
         const uploadRes = await fetch(
-            "http://localhost:5000/api/products/upload-image",
+            "https://kgn-handloom.onrender.com/api/products/upload-image",
             {
                 method: "POST",
                 body: imageData,
@@ -40,7 +40,7 @@ function HeroBannerManager() {
 
         // Step 2: Save banner in DB
         const saveRes = await fetch(
-            "http://localhost:5000/api/banners/add",
+            "https://kgn-handloom.onrender.com/api/banners/add",
             {
                 method: "POST",
                 headers: {
@@ -76,7 +76,7 @@ function HeroBannerManager() {
         if (!confirmDelete) return;
 
         const res = await fetch(
-            `http://localhost:5000/api/banners/${id}`,
+            `https://kgn-handloom.onrender.com/api/banners/${id}`,
             {
                 method: "DELETE",
             }
@@ -93,7 +93,7 @@ function HeroBannerManager() {
 
     async function handleToggle(id) {
         const res = await fetch(
-            `http://localhost:5000/api/banners/toggle/${id}`,
+            `https://kgn-handloom.onrender.com/api/banners/toggle/${id}`,
             {
                 method: "PUT",
             }

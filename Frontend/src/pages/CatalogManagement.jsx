@@ -17,7 +17,7 @@ function CatalogManagement() {
     }, []);
 
     async function loadRootNodes() {
-        const res = await fetch("http://localhost:5000/api/catalog/root");
+        const res = await fetch("https://kgn-handloom.onrender.com/api/catalog/root");
         const data = await res.json();
         setNodes(data);
         setCurrentParent(null);
@@ -25,11 +25,11 @@ function CatalogManagement() {
     }
 
     async function openNode(node) {
-        const res = await fetch(`http://localhost:5000/api/catalog/children/${node._id}`);
+        const res = await fetch(`https://kgn-handloom.onrender.com/api/catalog/children/${node._id}`);
         const data = await res.json();
         setNodes(data);
 
-        const pRes = await fetch(`http://localhost:5000/api/products/catalog/${node._id}`);
+        const pRes = await fetch(`https://kgn-handloom.onrender.com/api/products/catalog/${node._id}`);
         const pData = await pRes.json();
         setProducts(pData);
 
@@ -42,15 +42,15 @@ function CatalogManagement() {
             return;
         }
 
-        const res = await fetch(`http://localhost:5000/api/catalog/children/${currentParent.parentId}`);
+        const res = await fetch(`https://kgn-handloom.onrender.com/api/catalog/children/${currentParent.parentId}`);
         const data = await res.json();
         setNodes(data);
 
-        const parentRes = await fetch(`http://localhost:5000/api/catalog/${currentParent.parentId}`);
+        const parentRes = await fetch(`https://kgn-handloom.onrender.com/api/catalog/${currentParent.parentId}`);
         const parentData = await parentRes.json();
         setCurrentParent(parentData);
 
-        const pRes = await fetch(`http://localhost:5000/api/products/catalog/${currentParent.parentId}`);
+        const pRes = await fetch(`https://kgn-handloom.onrender.com/api/products/catalog/${currentParent.parentId}`);
         const pData = await pRes.json();
         setProducts(pData);
     }
@@ -63,7 +63,7 @@ function CatalogManagement() {
         const imageData = new FormData();
         imageData.append("image", image);
 
-        const upload = await fetch("http://localhost:5000/api/products/upload-image", {
+        const upload = await fetch("https://kgn-handloom.onrender.com/api/products/upload-image", {
             method: "POST",
             body: imageData,
         });
@@ -78,7 +78,7 @@ function CatalogManagement() {
             createdBy: JSON.parse(localStorage.getItem("user"))?.name,
         };
 
-        const res = await fetch("http://localhost:5000/api/catalog/create", {
+        const res = await fetch("https://kgn-handloom.onrender.com/api/catalog/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -95,7 +95,7 @@ function CatalogManagement() {
     async function handleDelete(id) {
         if (!window.confirm("Delete this category?")) return;
 
-        await fetch(`http://localhost:5000/api/catalog/delete/${id}`, {
+        await fetch(`https://kgn-handloom.onrender.com/api/catalog/delete/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -108,7 +108,7 @@ function CatalogManagement() {
     async function toggleStatus(node) {
         const endpoint = node.isActive ? "hide" : "show";
 
-        await fetch(`http://localhost:5000/api/catalog/${endpoint}/${node._id}`, {
+        await fetch(`https://kgn-handloom.onrender.com/api/catalog/${endpoint}/${node._id}`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -123,7 +123,7 @@ function CatalogManagement() {
     async function deleteProduct(id) {
         if (!window.confirm("Delete product?")) return;
 
-        await fetch(`http://localhost:5000/api/products/delete/${id}`, {
+        await fetch(`https://kgn-handloom.onrender.com/api/products/delete/${id}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -136,7 +136,7 @@ function CatalogManagement() {
     async function toggleProductStatus(product) {
         const endpoint = product.isActive ? "hide" : "show";
 
-        await fetch(`http://localhost:5000/api/products/${endpoint}/${product._id}`, {
+        await fetch(`https://kgn-handloom.onrender.com/api/products/${endpoint}/${product._id}`, {
             method: "PUT",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -149,7 +149,7 @@ function CatalogManagement() {
     }
 
     async function saveProductChanges() {
-        const res = await fetch(`http://localhost:5000/api/products/update/${editingProduct._id}`, {
+        const res = await fetch(`https://kgn-handloom.onrender.com/api/products/update/${editingProduct._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

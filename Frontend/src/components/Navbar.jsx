@@ -24,7 +24,7 @@ function Navbar() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch("http://localhost:5000/api/products/all");
+        const res = await fetch("https://kgn-handloom.onrender.com/api/products/all");
         const data = await res.json();
         setAllProducts(data);
       } catch (error) {

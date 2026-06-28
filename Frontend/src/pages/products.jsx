@@ -12,7 +12,7 @@ function Products() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/catalog/root")
+    fetch("https://kgn-handloom.onrender.com/api/catalog/root")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);

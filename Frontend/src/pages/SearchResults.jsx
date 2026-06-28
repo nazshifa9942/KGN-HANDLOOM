@@ -14,7 +14,7 @@ function SearchResults() {
   // fetch all products once
   useEffect(() => {
     async function fetchProducts() {
-      const res = await fetch("http://localhost:5000/api/products/all");
+      const res = await fetch("https://kgn-handloom.onrender.com/api/products/all");
       const data = await res.json();
       setProducts(data);
     }

@@ -14,7 +14,7 @@ function AddProduct() {
     const [whatsappNumber, setWhatsappNumber] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/catalog/leaf-nodes")
+        fetch("https://kgn-handloom.onrender.com/api/catalog/leaf-nodes")
             .then((res) => res.json())
             .then((data) => setCatalogNodes(data));
     }, []);
@@ -43,7 +43,7 @@ function AddProduct() {
         imageData.append("image", imageFile);
 
         const uploadResponse = await fetch(
-            "http://localhost:5000/api/products/upload-image",
+            "https://kgn-handloom.onrender.com/api/products/upload-image",
             {
                 method: "POST",
                 body: imageData,
@@ -60,7 +60,7 @@ function AddProduct() {
         };
 
         const response = await fetch(
-            "http://localhost:5000/api/products/add",
+            "https://kgn-handloom.onrender.com/api/products/add",
             {
                 method: "POST",
                 headers: {

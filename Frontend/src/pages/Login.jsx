@@ -9,7 +9,7 @@ function Login() {
 
   async function handleLogin() {
     const response = await fetch(
-      "http://localhost:5000/api/auth/login",
+      "https://kgn-handloom.onrender.com/api/auth/login",
       {
         method: "POST",
         headers: {

@@ -20,15 +20,15 @@ function CatalogBrowse() {
     const role = loggedInUser?.role || "customer";
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/catalog/${id}`)
+        fetch(`https://kgn-handloom.onrender.com/api/catalog/${id}`)
             .then((res) => res.json())
             .then((data) => setNode(data));
 
-        fetch(`http://localhost:5000/api/catalog/children/${id}`)
+        fetch(`https://kgn-handloom.onrender.com/api/catalog/children/${id}`)
             .then((res) => res.json())
             .then((data) => setChildren(data));
 
-        fetch(`http://localhost:5000/api/products/catalog/${id}`)
+        fetch(`https://kgn-handloom.onrender.com/api/products/catalog/${id}`)
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, [id]);
