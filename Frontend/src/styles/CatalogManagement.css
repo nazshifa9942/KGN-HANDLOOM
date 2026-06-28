@@ -1,0 +1,297 @@
+/* ================= PAGE ================= */
+.cm-page {
+  padding: 16px 20px 30px;
+  background: #f4f6f8;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+.cm-header {
+  margin-bottom: 16px;
+}
+
+.cm-header h1 {
+  font-size: 22px;
+  color: #8b1e1e;
+  margin-bottom: 4px;
+}
+
+.cm-breadcrumb {
+  font-size: 13px;
+  color: #777;
+}
+
+.cm-breadcrumb span {
+  cursor: pointer;
+}
+
+.cm-back-btn {
+  margin-top: 8px;
+  background: #5b5bd6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= FORM ================= */
+.cm-form {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.cm-form h3 {
+  width: 100%;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.cm-form input,
+.cm-form textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.cm-form input {
+  width: 180px;
+}
+
+.cm-form textarea {
+  width: 240px;
+  height: 36px;
+  resize: none;
+}
+
+.cm-primary-btn {
+  background: #f10a0a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= CATEGORY GRID ================= */
+.cm-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* ================= CATEGORY CARD ================= */
+.cm-category-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cm-category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* LEFT COLOR STRIP */
+.cm-category-card {
+  border-left: 4px solid #f59e0b;
+}
+
+/* ================= CARD TOP ================= */
+.cm-card-top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cm-card-top img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cm-card-top h3 {
+  font-size: 14px;
+  margin: 0;
+  color: #222;
+}
+
+/* ================= STATUS ================= */
+.cm-status {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.cm-status.active {
+  background: #e6f6ec;
+  color: #15803d;
+}
+
+.cm-status.hidden {
+  background: #fdeaea;
+  color: #b91c1c;
+}
+
+/* ================= DESCRIPTION ================= */
+.cm-desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* ================= ACTIONS ================= */
+.cm-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.cm-actions button {
+  font-size: 11px;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f1f1f1;
+}
+
+.cm-actions button:hover {
+  background: #e2e2e2;
+}
+
+.cm-delete {
+  background: #fee2e2 !important;
+  color: #b91c1c;
+}
+
+/* ================= PRODUCTS ================= */
+.cm-products {
+  margin-top: 20px;
+}
+
+.cm-products h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #0f766e;
+}
+
+/* ================= PRODUCT GRID ================= */
+.cm-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* ================= PRODUCT CARD ================= */
+.cm-product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  border-left: 4px solid #14b8a6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cm-product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cm-product-card h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.cm-price {
+  font-size: 13px;
+  font-weight: bold;
+  color: #0f766e;
+}
+
+.cm-product-card p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ================= MODAL ================= */
+.cm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cm-modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.cm-modal input,
+.cm-modal textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+
+.cm-modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .cm-category-grid,
+  .cm-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .cm-category-grid,
+  .cm-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cm-category-grid,
+  .cm-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cm-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cm-form input,
+  .cm-form textarea {
+    width: 100%;
+  }
+}

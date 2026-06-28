@@ -1,0 +1,220 @@
+.products-page {
+  max-width: 1400px;
+  margin: auto;
+  padding: 10px 6% 40px;
+}
+
+/* ================= HEADER ================= */
+
+.products-page .products-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.products-page .products-header h1 {catalog-page .product-content h3
+  font-size: 34px;
+  color: #cb1b41;
+  margin: 0 1px 5px;
+  font-weight: 700;
+}
+
+.products-page .products-header p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ================= GRID ================= */
+
+.products-page .category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ================= CARD ================= */
+
+.products-page .category-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;  
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: 0.3s;
+}
+
+.products-page .category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= LINK ================= */
+
+.products-page .category-link {
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* ================= IMAGE ================= */
+
+.products-page .category-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0; 
+}
+
+/* ================= CONTENT ================= */
+
+.products-page .category-content {
+  /* padding: 8px 10px 6px; */
+
+  display: flex;
+  flex-direction: column;
+  /* gap: 4px; */
+
+  flex-grow: 1;
+}
+
+/* ================= NAME ================= */
+
+.products-page .category-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+
+  line-height: 1.3;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ================= DESCRIPTION ================= */
+
+.products-page .category-description {
+  margin: 0;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.3;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: 34px; /* 🔥 fixed height for uniform cards */
+}
+
+/* ================= BUTTON FIX ================= */
+
+.products-page .category-card > a {
+  margin-top: auto;
+}
+
+/* ================= BUTTON ================= */
+
+.products-page .category-card .whatsapp-btn {
+  width: calc(100% - 20px);
+  margin: 8px 10px 10px;
+
+  padding: 7px;
+  font-size: 13px;
+
+  background: #25D366;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.products-page .category-card .whatsapp-btn:hover {
+  background: #1faa52;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .products-page .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-page {
+    padding: 15px;
+  }
+
+  .products-page .products-header h1 {
+    font-size: 26px;
+  }
+
+  .products-page .products-header p {
+    font-size: 14px;
+  }
+
+  .products-page .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .products-page .category-image {
+    height: 200px;
+  }
+
+  .products-page .category-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .products-page .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-page .category-image {
+    height: 220px;
+  }
+}
+
+/* ================= FORM ================= */
+
+.products-page .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.products-page .form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.products-page .form-group input,
+.products-page .form-group textarea,
+.products-page .form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}

@@ -1,0 +1,104 @@
+.footer{
+    background:#f6f1ea;
+    padding:40px 6% 0;
+}
+
+/* ================= GRID ================= */
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+}
+
+/* ================= BRAND ================= */
+
+.footer-logo{
+    width:60px;
+    margin-bottom:10px;
+}
+
+.footer-col h2{
+    color:#b71c1c;
+    margin:0 0 6px;
+}
+
+.tagline{
+    font-size:13px;
+    color:#666;
+    margin-bottom:15px;
+}
+
+/* ================= HEADINGS ================= */
+
+.footer-col h3{
+    color:#b71c1c;
+    margin-bottom:12px;
+    font-size:18px;
+}
+
+/* ================= LINKS ================= */
+
+.footer-col a{
+    display:block;
+    margin-bottom:8px;
+    color:#444;
+    text-decoration:none;
+    font-size:14px;
+    transition:.2s;
+}
+
+.footer-col a:hover{
+    color:#b71c1c;
+    text-decoration:underline;
+}
+
+/* ================= ITEMS ================= */
+
+.footer-item{
+    display:flex;
+    gap:8px;
+    margin-bottom:10px;
+    font-size:14px;
+    color:#444;
+}
+
+.footer-item svg{
+    color:#d4af37; /* gold */
+    margin-top:3px;
+}
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom{
+    margin-top:30px;
+    border-top:2px solid #d4af37;
+    text-align:center;
+    padding:12px 0;
+    font-size:13px;
+    color:#666;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+    .footer-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+}
+
+@media(max-width:500px){
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .footer{
+        padding:30px 20px 0;
+    }
+
+    .footer-col{
+        border-bottom:1px solid #ddd;
+        padding-bottom:15px;
+    }
+}

@@ -1,0 +1,228 @@
+.content-page {
+  padding: 10px 20px 40px;   /* 🔥 reduced top + side spacing */
+  background: #f6f3f1;       /* slight warm tone instead of plain grey */
+  min-height: 100vh;
+  max-width: 1300px;         /* wider layout */
+  margin: auto;
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.content-header h1 {
+  color: #b71c1c; /* deeper maroon */
+  margin-bottom: 4px;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+.content-header p {
+  color: #777;
+  font-size: 15px;
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* 🔥 4 cards */
+  gap: 22px;
+}
+.content-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* GOLD TOP LINE (branding touch) */
+.content-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #c62828, #d4af37);
+}
+
+/* HOVER */
+.content-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+
+  /* 🔥 circle background */
+  width: 55px;
+  height: 55px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(198, 40, 40, 0.08); /* light maroon tint */
+}
+
+.content-card h3 {
+  margin-bottom: 6px;
+  color: #b71c1c;   /* 🔥 brand color */
+  font-size: 18px;
+}
+
+.content-card p {
+  color: #777;
+  font-size: 13px;
+}
+
+/* MOBILE */
+/* Tablet */
+@media (max-width: 1000px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-header h1 {
+    font-size: 24px;
+  }
+}
+/* ================= GRID (NEW) ================= */
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ================= UPDATED CARD ================= */
+.user-card {
+  padding: 14px; 
+}
+
+/* ================= NEW TOP GRID ================= */
+.user-top-grid {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 8px;
+  align-items: start;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+
+/* SMALL PHOTO (as you wanted) */
+.user-photo {
+  width: 85px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* NAME */
+.user-name {
+  font-size: 16px;
+  color: #6b1d1d;
+  margin-bottom: 4px;
+}
+
+/* REMOVE OLD DOT BORDER LOOK */
+.user-info p {
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: 13px;
+  margin: 2px 0;
+}
+
+/* RIGHT SIDE ALIGN */
+.user-info.right {
+  text-align: right;
+}
+
+/* ================= STATUS (SIMPLER) ================= */
+.status {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.active {
+  color: #15803d;
+  background: none;
+}
+
+.status.inactive {
+  color: #b91c1c;
+  background: none;
+}
+
+/* ================= AADHAAR FIX ================= */
+.aadhaar-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  padding-bottom: 8px;
+}
+
+.aadhaar-img {
+  width: 100%;
+  max-width: 260px; 
+  height: 160px;      
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ================= BOTTOM ROW ================= */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* SALARY */
+.salary-text {
+  font-size: 16px;
+}
+
+.salary-btn {
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: #6b1d1d;
+  cursor: pointer;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 900px) {
+  .user-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .user-top-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .user-info.right {
+    text-align: center;
+  }
+}

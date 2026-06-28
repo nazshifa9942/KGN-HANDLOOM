@@ -1,0 +1,161 @@
+/* ================= PAGE ================= */
+.offer-page {
+  padding: 18px;
+  background: #f4f6f8;
+  min-height: 100vh;
+}
+
+/* ================= TITLE ================= */
+.offer-title {
+  font-size: 22px;
+  color: #8b1e1e;
+  margin-bottom: 12px;
+}
+
+.offer-subtitle {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* ================= FORM CARD ================= */
+.offer-form-card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 18px;
+}
+
+/* ================= FORM ================= */
+.offer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.offer-input,
+.offer-textarea,
+.offer-file {
+  padding: 7px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.offer-textarea {
+  min-height: 70px;
+  resize: none;
+}
+
+.offer-submit {
+  background: #8b1e1e;
+  color: white;
+  border: none;
+  padding: 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.offer-submit:hover {
+  background: #6b1414;
+}
+
+/* ================= GRID ================= */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ================= CARD ================= */
+.offer-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.offer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.offer-card.inactive {
+  opacity: 0.5;
+}
+
+/* ================= IMAGE ================= */
+.offer-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* ================= CONTENT ================= */
+.offer-content {
+  padding: 8px 10px 4px;
+}
+
+.offer-content h4 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.offer-content p {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* ================= ACTIONS ================= */
+.offer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 10px 10px;
+}
+
+.offer-actions button {
+  font-size: 11px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* DELETE */
+.offer-delete {
+  background: #fde2e2;
+  color: #b91c1c;
+}
+
+/* TOGGLE */
+.offer-toggle {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1000px) {
+  .offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .offer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+}
