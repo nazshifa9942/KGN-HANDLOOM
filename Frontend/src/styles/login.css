@@ -70,11 +70,12 @@
 
 .login-card input {
   width: 100%;
-  padding: 8px;
+  padding: 10px 12px;
   margin-bottom: 12px;
   border-radius: 6px;
   border: 1px solid #ddd;
   font-size: 13px;
+  box-sizing: border-box;
 }
 
 .login-card input:focus {
@@ -109,16 +110,21 @@
 }
 
 .password-wrapper input {
-  padding-right: 35px;
+  padding-right: 42px;
+  margin-bottom: 12px;
 }
 
 .toggle-password {
   position: absolute;
-  right: 10px;
   top: 50%;
+  right: 12px;
   transform: translateY(-50%);
   cursor: pointer;
-  font-size: 14px;
+  user-select: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ================= RESPONSIVE ================= */

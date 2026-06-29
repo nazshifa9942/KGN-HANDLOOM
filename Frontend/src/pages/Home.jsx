@@ -41,7 +41,7 @@ function Home() {
         // shuffle ONCE only
         const shuffled = [...data]
           .sort(() => 0.5 - Math.random())
-          .slice(0, 6);
+          .slice(0, 10);
 
         setFeaturedProducts(shuffled);
       });

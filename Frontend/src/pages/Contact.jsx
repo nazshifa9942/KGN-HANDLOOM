@@ -1,21 +1,7 @@
-import { useState } from "react";
 import "../styles/contact.css";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const whatsappMessage = `Name: ${name}%0AMessage: ${message}`;
-
-    window.open(
-      `https://wa.me/911234567890?text=${whatsappMessage}`,
-      "_blank"
-    );
-  }
-
+  
   return (
     <div className="contact-page">
 
@@ -126,12 +112,14 @@ function Contact() {
 
           <div className="store-map">
             <iframe
-              src="https://maps.app.goo.gl/iVvjZVgCG5YbPURP9?g_st=iwb"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3576.935780655789!2d84.92747159999999!3d26.2961818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992d58335a05ddf%3A0x52af18038cbb3b30!2sKGN%20HANDLOOM%2CGULAB%20MARKET%2CMADARSHA%20ROAD%2CGANDHI%20CHOWK%2CSAHEBGANJ!5e0!3m2!1sen!2sin!4v1782722509169!5m2!1sen!2sin"
               width="100%"
-              height="250"
+              height="100%"
               className="map-frame"
-              allowFullScreen=""
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
           </div>
 

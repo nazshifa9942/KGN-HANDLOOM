@@ -1,6 +1,6 @@
 /* ===== PAGE ===== */
 .contact-page {
-  padding: 30px 5%;
+  padding: 5px 6% 60px;
   background: #f9f9f9;
 }
 
@@ -174,9 +174,11 @@
 
 /* ===== MAP ===== */
 .store-map {
+  width: 100%;
+  height: 320px;   /* Adjust if you want it taller */
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .map-frame {

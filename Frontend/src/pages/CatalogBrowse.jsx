@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function CatalogBrowse() {
 
-    const whatsappDefault = "8969040988"; // fallback
+    const defaultWhatsapp = "7352272714"; // fallback
 
     function getWhatsappLink(phone, message) {
         return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -49,42 +49,46 @@ function CatalogBrowse() {
             {children.length > 0 && (
                 <>
                     <div className="category-grid">
-                        {children.map((child) => (
-                            <div key={child._id} className="category-card">
+                        {children.map((child) => {
+                            const phone = child.whatsappNumber || defaultWhatsapp;
 
-                                <Link
-                                    to={`/catalog/${child._id}`}
-                                    className="category-link"
-                                >
-                                    <img
-                                        src={child.image}
-                                        alt={child.name}
-                                        className="category-image"
-                                    />
+                            return (
+                                <div key={child._id} className="category-card">
 
-                                    <div className="category-content">
-                                        <h3>{child.name}</h3>
-                                        <p>{child.description ||
-                                            "Premium quality product from our latest collection."}</p>
-                                    </div>
-                                </Link>
+                                    <Link
+                                        to={`/catalog/${child._id}`}
+                                        className="category-link"
+                                    >
+                                        <img
+                                            src={child.image}
+                                            alt={child.name}
+                                            className="category-image"
+                                        />
 
-                                {/* ✅ FIXED */}
-                                <a
-                                    href={getWhatsappLink(
-                                        whatsappDefault,
-                                        `Hi, I'm interested in "${child.name}" from ${node?.name}. Please share details.`
-                                    )}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <button className="whatsapp-btn">
-                                        Enquire on WhatsApp
-                                    </button>
-                                </a>
+                                        <div className="category-content">
+                                            <h3>{child.name}</h3>
+                                            <p>{child.description ||
+                                                "Premium quality product from our latest collection."}</p>
+                                        </div>
+                                    </Link>
 
-                            </div>
-                        ))}
+                                    {/* ✅ FIXED */}
+                                    <a
+                                        href={getWhatsappLink(
+                                            phone,
+                                            `Hi, I'm interested in "${child.name}" from ${node?.name}. Please share details.`
+                                        )}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <button className="whatsapp-btn">
+                                            Enquire on WhatsApp
+                                        </button>
+                                    </a>
+
+                                </div>
+                            );
+                        })}
                     </div>
                 </>
             )}
@@ -100,7 +104,7 @@ function CatalogBrowse() {
                     <div className="product-grid">
                         {products.map((product) => {
 
-                            const phone = product.whatsappNumber || whatsappDefault;
+                            const phone = product.whatsappNumber || defaultWhatsapp;
 
                             return (
                                 <div key={product._id} className="product-card">

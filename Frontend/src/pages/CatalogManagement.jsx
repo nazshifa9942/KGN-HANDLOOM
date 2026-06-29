@@ -8,6 +8,7 @@ function CatalogManagement() {
     const [formData, setFormData] = useState({
         name: "",
         description: "",
+        whatsappNumber: "",
     });
     const [image, setImage] = useState(null);
     const [editingProduct, setEditingProduct] = useState(null);
@@ -73,6 +74,7 @@ function CatalogManagement() {
         const nodeData = {
             name: formData.name,
             description: formData.description,
+            whatsappNumber: formData.whatsappNumber,
             image: img.imageUrl,
             parentId: currentParent ? currentParent._id : null,
             createdBy: JSON.parse(localStorage.getItem("user"))?.name,
@@ -89,7 +91,11 @@ function CatalogManagement() {
 
         const data = await res.json();
         setNodes([...nodes, data]);
-        setFormData({ name: "", description: "" });
+        setFormData({
+            name: "",
+            description: "",
+            whatsappNumber: "",
+        });
     }
 
     async function handleDelete(id) {
@@ -205,6 +211,14 @@ function CatalogManagement() {
                     name="description"
                     placeholder="Description"
                     value={formData.description}
+                    onChange={handleChange}
+                />
+
+                <input
+                    type="text"
+                    name="whatsappNumber"
+                    placeholder="WhatsApp Number (Optional)"
+                    value={formData.whatsappNumber}
                     onChange={handleChange}
                 />
 

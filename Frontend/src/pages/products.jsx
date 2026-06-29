@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Products() {
   const [categories, setCategories] = useState([]);
 
-  const whatsappNumber = "9942999788";
+  const defaultWhatsapp = "7352272714";
 
   function getWhatsappLink(phone, message) {
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -30,45 +30,48 @@ function Products() {
       </div>
 
       <div className="category-grid">
-        {categories.map((category) => (
-          <div key={category._id} className="category-card">
+        {categories.map((category) => {
+          const phone = category.whatsappNumber || defaultWhatsapp;
+          return (
+            <div key={category._id} className="category-card">
 
-            {/* ✅ CLICKABLE PART (GO TO NEXT PAGE) */}
-            <Link
-              to={`/catalog/${category._id}`}
-              className="category-link"
-            >
-              <img
-                className="category-image"
-                src={category.image}
-                alt={category.name}
-              />
+              {/* ✅ CLICKABLE PART (GO TO NEXT PAGE) */}
+              <Link
+                to={`/catalog/${category._id}`}
+                className="category-link"
+              >
+                <img
+                  className="category-image"
+                  src={category.image}
+                  alt={category.name}
+                />
 
-              <div className="category-content">
-                <h3 className="category-name">{category.name}</h3>
+                <div className="category-content">
+                  <h3 className="category-name">{category.name}</h3>
 
-                <p className="category-description">
-                  {category.description || "Premium quality collection available at best wholesale price."}
-                </p>
-              </div>
-            </Link>
+                  <p className="category-description">
+                    {category.description || "Premium quality collection available at best wholesale price."}
+                  </p>
+                </div>
+              </Link>
 
-            {/* ✅ WHATSAPP BUTTON (SEPARATE) */}
-            <a
-              href={getWhatsappLink(
-                whatsappNumber,
-                `Hi, I'm interested in ${category.name}. Please share details.`
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="whatsapp-btn">
-                Enquire on WhatsApp
-              </button>
-            </a>
+              {/* ✅ WHATSAPP BUTTON (SEPARATE) */}
+              <a
+                href={getWhatsappLink(
+                  phone,
+                  `Hi, I'm interested in ${category.name}. Please share details.`
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="whatsapp-btn">
+                  Enquire on WhatsApp
+                </button>
+              </a>
 
-          </div>
-        ))}
+            </div>
+            );
+        })}
       </div>
     </div>
   );
