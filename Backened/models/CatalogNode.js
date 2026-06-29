@@ -17,6 +17,11 @@ const catalogNodeSchema = new mongoose.Schema(
             required: true,
         },
 
+        whatsappNumber: {
+            type: String,
+            default: "",
+        },
+
         parentId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "CatalogNode",
