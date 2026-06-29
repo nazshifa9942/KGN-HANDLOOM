@@ -42,7 +42,7 @@ function Footer() {
 
           <div className="footer-item">
             <FaPhoneAlt />
-            <span>+91 7352272714</span>
+            <span>+91 9471272714</span>
           </div>
 
           <div className="footer-item">
@@ -90,12 +90,12 @@ function Footer() {
 
           <div className="footer-item">
             <FaPhoneAlt />
-            <span>Customer Care: +91 7352272714</span>
+            <span>Customer Care: +91 9471272714</span>
           </div>
 
           <div className="footer-item">
             <FaPhoneAlt />
-            <span>WhatsApp: +91 7352272714</span>
+            <span>WhatsApp: +91 9471272714</span>
           </div>
 
           <div className="footer-item">

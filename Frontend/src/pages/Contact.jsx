@@ -105,7 +105,7 @@ function Contact() {
             <p>Bihar, India</p>
 
             <p><strong>GST:</strong> 10BBYPA8298Q1ZQ</p>
-            <p><strong>Mobile:</strong> +91 7352272714</p>
+            <p><strong>Mobile:</strong> +91 9471272714</p>
             <p><strong>Email:</strong> kgnhandloom00786@gmail.com</p>
 
           </div>
